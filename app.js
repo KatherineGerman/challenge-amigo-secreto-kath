@@ -10,7 +10,21 @@ function agregarAmigo() {
    // get values from input entry 
    let inputName = document.querySelector(".input-name").value;
 
+ // validation for empty value
+ if(inputName !== ""){
 
+    nombres.push(inputName);
+    console.log(nombres);
+
+    //reset input entry once a name is added
+    document.querySelector(".input-name").value = "";
+    
+   } else  {
+    alert('Por favor, inserte un nombre');
+
+   }
+  
+   
    
    //let nuevosNombres = nombres.push('')
     
