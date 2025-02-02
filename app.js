@@ -12,10 +12,9 @@ function agregarAmigo() {
 
  // validation for empty value
  if(inputName !== ""){
-
+   
     nombres.push(inputName);
     //console.log(nombres);
-
     //reset input entry once a name is added
     document.querySelector(".input-name").value = "";
     
@@ -23,6 +22,10 @@ function agregarAmigo() {
     alert('Por favor, inserte un nombre');
 
    }
+
+   if(nombres.length >= 11) {
+      alert('Alcanzo el limite de nombres')
+   } 
     
    updateFriends();
 }
@@ -40,7 +43,12 @@ function sortearAmigo() {
  
    let amigoSorteado = nombres[Math.floor(Math.random() * nombres.length)];
    let resultList = document.getElementById('resultado');
-   resultList.innerHTML += `<li>${amigoSorteado}</li>`
+   let nameList = document.querySelector(".name-list");
+   nameList.innerHTML = "";
+   resultList.innerHTML += `<p>El amigo secreto es: ${amigoSorteado}</p>`
+
+ 
+   
 
 }
 
