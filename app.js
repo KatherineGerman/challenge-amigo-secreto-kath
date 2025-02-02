@@ -35,3 +35,12 @@ function updateFriends(){
       nameList.innerHTML += `<li>${nombres[i]}</li>`;
     }
 }
+
+function sortearAmigo() {
+ 
+   let amigoSorteado = nombres[Math.floor(Math.random() * nombres.length)];
+   let resultList = document.getElementById('resultado');
+   resultList.innerHTML += `<li>${amigoSorteado}</li>`
+
+}
+
