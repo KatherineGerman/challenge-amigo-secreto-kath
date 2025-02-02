@@ -14,7 +14,7 @@ function agregarAmigo() {
  if(inputName !== ""){
 
     nombres.push(inputName);
-    console.log(nombres);
+    //console.log(nombres);
 
     //reset input entry once a name is added
     document.querySelector(".input-name").value = "";
@@ -23,10 +23,15 @@ function agregarAmigo() {
     alert('Por favor, inserte un nombre');
 
    }
-  
-   
-   
-   //let nuevosNombres = nombres.push('')
     
+   updateFriends();
 }
 
+function updateFriends(){
+   let nameList = document.querySelector(".name-list");
+   nameList.innerHTML = "";
+
+   for (let i = 0; i < nombres.length; i++) {
+      nameList.innerHTML += `<li>${nombres[i]}</li>`;
+    }
+}
